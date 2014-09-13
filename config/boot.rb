@@ -16,7 +16,7 @@ module Application
   end
   
   class << self
-    attr_accessor :name
+    attr_accessor :name, :app
   end
   
 end
