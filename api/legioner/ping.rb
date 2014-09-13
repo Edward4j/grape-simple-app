@@ -2,16 +2,14 @@ module Legioner
   
   class Ping < Grape::API
     
-    version 'v1', :using => :header, :vendor => 'showbox', :format => :json
-    resource :system do
+    version 'v1', using: :header, vendor: 'showbox'
+    format :json
       
-      desc "Answers a ping"
-      get :ping do
-        "pong"
-      end
-      
+    desc "Answers a ping"
+    get :ping do
+      "pong"
     end
-       
+      
   end
   
 end
