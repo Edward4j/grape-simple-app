@@ -20,3 +20,5 @@ module Application
   end
   
 end
+
+$:<<Application::Path::api
