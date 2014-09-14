@@ -1,15 +1,14 @@
 module Legioner
   
-  class Ping < Grape::API
+  class Hello < Grape::API
     
     version 'v1', using: :header, vendor: 'showbox'
     format :json
-      
-    desc "Answers a ping"
-    get :ping do
-      "pong"
+    
+    desc "Says hello"
+    get :hello do
+      "Hello World!"
     end
-      
   end
   
 end
