@@ -1,4 +1,4 @@
-module Legioner
+module GrapeSampleApp
   
   class Hello < Grape::API
     
