@@ -1,15 +1,14 @@
 module GrapeSampleApp
-  
-  class Hello < Grape::API
+  class A < Grape::API
     puts caller
     version 'v1', using: :header, vendor: 'geek.co.il'
     format :json
-    
-    desc "Says hello"
-    get :hello do
-      binding.pry
-      "Hello World!"
+
+    desc "Invokes class B"
+
+    get :say_a do
+      # binding.pry
+      B::b_constant
     end
   end
-  
 end
