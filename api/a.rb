@@ -1,7 +1,7 @@
-module GrapeSampleApp
+# module GrapeSampleApp
   class A < Grape::API
-    puts caller
-    version 'v1', using: :header, vendor: 'geek.co.il'
+    # puts caller
+    version 'v1' # , using: :header, vendor: API_VENDOR # 'geek.co.il'
     format :json
 
     desc "Invokes class B"
@@ -11,4 +11,4 @@ module GrapeSampleApp
       B::b_constant
     end
   end
-end
+# end

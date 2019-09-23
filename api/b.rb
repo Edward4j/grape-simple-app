@@ -4,8 +4,8 @@
 #   end
 
   class B < Grape::API
-    puts caller
-    version 'v1', using: :header, vendor: 'geek.co.il'
+    # puts caller
+    version 'v1' #, using: :header, vendor: API_VENDOR # 'geek.co.il'
     format :json
 
     # helpers do
