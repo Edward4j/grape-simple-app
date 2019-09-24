@@ -1,14 +1,10 @@
-# module GrapeSampleApp
-  class A < Grape::API
-    # puts caller
-    version 'v1' # , using: :header, vendor: API_VENDOR # 'geek.co.il'
-    format :json
+class A < Grape::API
+  version 'v1', using: :path # , using: :header, vendor: API_VENDOR # 'geek.co.il'
+  format :json
 
-    desc "Invokes class B"
+  desc "Invokes class B"
 
-    get :say_a do
-      # binding.pry
-      B::b_constant
-    end
+  get :say_a do
+    B::b_constant
   end
-# end
+end

@@ -1,19 +1,23 @@
-# module API
-  class Root < Grape::API
-    version 'v1'
-    format :json
-    prefix :api
+require_relative 'a'
+require_relative 'b'
+require_relative 'c'
+require_relative 'hello'
 
-    before do
-      header['Access-Control-Allow-Origin'] = '*'
-      header['Access-Control-Request-Method'] = '*'
-    end
+class Root < Grape::API
+  extend ActiveSupport::Autoload
 
-    # binding.pry
-    # mount GrapeSampleApp::A
-    # mount A
-    # mount B
-    # mount C
-    # add_swagger_documentation
+  version 'v1', using: :path
+  format :json
+  # prefix :api
+
+  before do
+    header['Access-Control-Allow-Origin'] = '*'
+    header['Access-Control-Request-Method'] = '*'
   end
-# end
+
+  mount A => '/'
+  mount B, to: '/'
+  mount C, to: '/'
+  mount Hello => '/v1'
+  # add_swagger_documentation
+end
