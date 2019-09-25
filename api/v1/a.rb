@@ -1,7 +1,6 @@
-module GrapeSampleApp
+module V1
   class A < Grape::API
-    puts caller
-    version 'v1', using: :header, vendor: 'geek.co.il'
+    version 'v1', using: :path
     format :json
 
     desc "Invokes class B"
