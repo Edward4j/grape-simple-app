@@ -1,6 +1,6 @@
 module V1
   class Hello < Grape::API
-    # puts caller
+    puts "hello.rb loaded! Time: #{Time.now}"
     # version 'v1', using: :header, vendor: 'geek.co.il'
     format :json
     

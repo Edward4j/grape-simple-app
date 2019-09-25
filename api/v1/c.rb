@@ -1,6 +1,6 @@
 module V1
   class C < Grape::API
-    # puts caller
+    puts "c.rb loaded! Time: #{Time.now}"
     version 'v1', using: :path
     format :json
 

@@ -1,4 +1,5 @@
 class Root < Grape::API
+  puts "root.rb loaded! Time: #{Time.now}"
   format :json
 
   before do
@@ -6,7 +7,7 @@ class Root < Grape::API
     header['Access-Control-Request-Method'] = '*'
   end
 
-  Dir["#{Application::Path::api}/**/*.rb"].each { |file| require file }
+  # Dir["#{Application::Path::api}/**/*.rb"].each { |file| require file }
 
   mount V1::A
   mount V1::B

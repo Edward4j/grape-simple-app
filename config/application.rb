@@ -2,6 +2,8 @@ require 'active_support/dependencies'
 
 Bundler.require :default, ENV['RACK_ENV']
 
+ActiveSupport::Dependencies.autoload_paths += ["#{Application::Path::api}"]
+
 # set up Rack application
 Application::app = Rack::Builder.new do
   # set up client serving from static files 
@@ -13,11 +15,11 @@ Application::app = Rack::Builder.new do
   # (APIs should use :prefix to make sure they don't overlap)
   class ApplicationAPI < Grape::API
     # binding.pry
-    ActiveSupport::Dependencies.autoload_paths += ["#{Application::Path::api}/**/"]
+    # ActiveSupport::Dependencies.autoload_paths += ["#{Application::Path::api}"]
 
-    path_to_root = "#{Application::Path::api}/root.rb"
-
-    autoload(File.basename(path_to_root).split(".").first.capitalize.to_sym, path_to_root)
+    # path_to_root = "#{Application::Path::api}/root.rb"
+    #
+    # autoload(File.basename(path_to_root).split(".").first.capitalize.to_sym, path_to_root)
 
     mount(Root, to: '/')
 

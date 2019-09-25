@@ -1,6 +1,6 @@
 module V1
   class B < Grape::API
-    # puts caller
+    puts "b.rb loaded! Time: #{Time.now}"
     version 'v1', using: :path
     format :json
 
